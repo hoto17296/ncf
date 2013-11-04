@@ -3,3 +3,4 @@ tmp/*
 [Cc]onfig/database.php
 [Ww]ebroot/index.php
 !empty
+deploy.sh
