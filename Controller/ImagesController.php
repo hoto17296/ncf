@@ -3,7 +3,15 @@ App::uses('AppController', 'Controller');
 
 class ImagesController extends AppController {
 
-	public function add() {
+  public function add($fish_id) {
+    $this->setTitle('お絵かきページ');
+
+    $this->loadModel('Fish');
+    if (!$this->Fish->exists($fish_id)) {
+      throw new NotFoundException(__('Invalid fish'));
+    }
+    $this->set('fish', $this->Fish->findById($fish_id));
+
 		if ($this->request->is('post')) {
 			$this->Image->create();
 			if ($this->Image->save($this->request->data)) {
@@ -13,9 +21,6 @@ class ImagesController extends AppController {
 				$this->Session->setFlash(__('The image could not be saved. Please, try again.'));
 			}
 		}
-		$users = $this->Image->User->find('list');
-		$fish = $this->Image->Fish->find('list');
-    $this->set(compact('users', 'fish'));
 
     $this->layout = false;
   }

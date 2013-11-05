@@ -24,6 +24,10 @@ class AppController extends Controller {
     'Paginator' => array('className' => 'BoostCake.BoostCakePaginator'),
   );
 
+  public function setTitle($title) {
+    return $this->set('title_for_layout', $title . ' | お絵かきアクアリウム');
+  }
+
   public function getUser() {
     return $this->Session->read('user');
   }

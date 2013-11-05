@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" type="text/css" href="css/jquery-ui.custom/lightness.css" />
-	<link rel="stylesheet" type="text/css" href="css/jquery.colorpicker.css" />
-	<link rel="stylesheet" type="text/css" href="css/jquery.paint.css" />
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/jcanvas.min.js"></script>
-	<script type="text/javascript" src="js/jquery-ui.custom.min.js"></script>
-	<script type="text/javascript" src="js/jquery.colorpicker.js"></script>
-	<script type="text/javascript" src="js/jquery.paint.js"></script>
+  <?= $this->Html->charset() ?>
+	<title><?= $title_for_layout ?></title>
+<?php
+  echo $this->Html->css('jquery-ui.custom/lightness.css');
+  echo $this->Html->css('jquery.colorpicker.css');
+  echo $this->Html->css('jquery.paint.css');
+  echo $this->Html->script('jquery.min.js');
+  echo $this->Html->script('jcanvas.min.js');
+  echo $this->Html->script('jquery-ui.custom.min.js');
+  echo $this->Html->script('jquery.colorpicker.js');
+  echo $this->Html->script('jquery.paint.js');
+?>
 </head>
 <body>
 
-<h1 style="color:#666">jQuery.paint デモページ</h1>
+<h1 style="color:#666"><?= $fish['Fish']['name'] ?> の絵を描く</h1>
 
 <script type="text/javascript">
 $(function(){

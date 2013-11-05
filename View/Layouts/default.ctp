@@ -2,9 +2,7 @@
 <html>
 <head>
 	<?= $this->Html->charset() ?>
-	<title>
-		<?= $title_for_layout ?>
-	</title>
+	<title><?= $title_for_layout ?></title>
 	<?php
 		echo $this->Html->meta('icon');
     
