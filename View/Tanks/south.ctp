@@ -1,4 +1,4 @@
-南館のページ
+<h2>南館のページ</h2>
 
 <ul>
 <? foreach($tanks as $tank): ?>
