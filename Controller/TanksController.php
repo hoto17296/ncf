@@ -100,4 +100,13 @@ class TanksController extends AppController {
 			$this->Session->setFlash(__('The tank could not be deleted. Please, try again.'));
 		}
 		return $this->redirect(array('action' => 'index'));
-	}}
+  }
+
+  public function north(){
+		$this->set('tanks', $this->Tank->find('all'));
+  }
+  public function south(){
+		$this->set('tanks', $this->Tank->find('all'));
+  }
+
+}

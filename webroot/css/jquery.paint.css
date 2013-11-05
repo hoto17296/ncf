@@ -1,0 +1,100 @@
+@CHARSET "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+body {
+	font-size: smaller;
+  height: 100%;
+  width: 100%;
+	background-color: #eee;
+	margin: 1em;
+}
+
+input, textarea {
+	padding: 0.2em;
+}
+
+.clearfix:after{
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+}
+.clearfix{ zoom:1; }
+
+.paint-tool {
+	margin: 1em;
+	position: relative;
+}
+
+.paint-shape {
+	position: absolute;
+	top: 0;
+	left: 20em;
+}
+
+.paint-property {
+	position: absolute;
+	top: 4em;
+	width: 5em;
+}
+
+.paint-property-thickness,
+.paint-property-color {
+	margin-bottom: 1em;
+	padding: 5px;
+	border: 1px #ccc solid;
+	background-color: #f6f6f6;
+	border-radius: 10px;
+}
+
+.paint-property-color { text-align: center; }
+.paint-property-color input {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+.paint-property-color div {
+	width: 2em;
+	height: 2em;
+	border: 1px #ccc solid;
+	margin: .5em auto;
+	cursor: pointer;
+}
+
+.paint-property-thickness {
+	text-align: center;
+}
+.paint-property-thickness-val {
+	background-color: transparent;
+	border: 0;
+	width: 2em;
+	font-weight: bold;
+	font-size: larger;
+	text-align: center;
+	color: red;
+}
+.paint-property-thickness-slider {
+	margin: 10px auto;
+    height: 8em;
+}
+
+.paint-canvas {
+	position: absolute;
+	top: 4em;
+}
+
+canvas {
+	position: absolute;
+	top: 0; left: 8em;
+	border: 1px #ccc solid;
+}
+
+.paint-canvas-file {
+	background-color: #fff;
+	z-index: -1;
+}
