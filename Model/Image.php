@@ -30,7 +30,7 @@ class Image extends AppModel {
 
 	public function upload($image, $image_id){
     $image = base64_decode(str_replace('data:image/jpeg;base64,', '', $image));
-    $filepath = WWW_ROOT . 'upload/' . $image_id . '.jpg';
+    $filepath = WWW_ROOT . 'img/upload/' . $image_id . '.jpg';
     return file_put_contents($filepath, $image);
   }
 }
