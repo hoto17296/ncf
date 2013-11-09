@@ -20,6 +20,7 @@ class UsersController extends AppController {
   }
  
   public function callback() {
+    $this->autoRender = false;
     $accessTokenUrl = 'https://api.twitter.com/oauth/access_token';
     $verifyCredentialsUrl = 'http://api.twitter.com/1.1/account/verify_credentials.json';
     $requestToken = $this->Session->read('twitter_request_token');
@@ -36,8 +37,7 @@ class UsersController extends AppController {
       $this->User->save(array('User' => $user));
       $this->Session->write('user', $user);
     }
-
-    $this->autoRender = false;
+    $this->redirect('/');
   }
 
   public function logout() {

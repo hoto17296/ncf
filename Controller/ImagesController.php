@@ -3,26 +3,44 @@ App::uses('AppController', 'Controller');
 
 class ImagesController extends AppController {
 
-  public function add($fish_id) {
+  public $uses = array('Image', 'Fish');
+
+  public function paint($fish_id){
+    $this->layout = false;
     $this->setTitle('お絵かきページ');
 
-    $this->loadModel('Fish');
     if (!$this->Fish->exists($fish_id)) {
       throw new NotFoundException(__('Invalid fish'));
     }
+
+    $this->set('user', $this->getUser());
     $this->set('fish', $this->Fish->findById($fish_id));
+  }
 
-		if ($this->request->is('post')) {
-			$this->Image->create();
-			if ($this->Image->save($this->request->data)) {
-				$this->Session->setFlash(__('The image has been saved.'));
-				return $this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The image could not be saved. Please, try again.'));
-			}
-		}
+  public function upload() {
+    $this->autoRender = false;
 
-    $this->layout = false;
+    $data = array(
+      'Image' => array(
+        'user_id' => $user['id'],
+        'fish_id' => $this->request->data['fish_id']
+      )
+    );
+    if ($this->Image->save($data) &&
+      $this->Image->upload($this->request->data['image'], $this->Image->getLastInsertID())){
+      $res = array(
+        'Status' => 'Success',
+        'Message' => 'Upload Succeed!'
+      );
+    }
+    else {
+      $res = array(
+        'Status' => 'Error',
+        'Message' => 'Upload Failed...'
+      );
+    }
+    header('Content-Type: text/javascript; charset=utf-8');
+    echo json_encode($res);
   }
 
 	public function delete($id = null) {

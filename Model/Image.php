@@ -1,38 +1,16 @@
 <?php
 App::uses('AppModel', 'Model');
-/**
- * Image Model
- *
- * @property User $User
- * @property Fish $Fish
- */
+
 class Image extends AppModel {
 
-/**
- * Validation rules
- *
- * @var array
- */
 	public $validate = array(
 		'fish_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-	);
+  );
 
-	//The Associations below have been created with all possible keys, those that are not needed can be removed
-
-/**
- * belongsTo associations
- *
- * @var array
- */
 	public $belongsTo = array(
 		'User' => array(
 			'className' => 'User',
@@ -48,5 +26,11 @@ class Image extends AppModel {
 			'fields' => '',
 			'order' => ''
 		)
-	);
+  );
+
+	public function upload($image, $image_id){
+    $image = base64_decode(str_replace('data:image/jpeg;base64,', '', $image));
+    $filepath = WWW_ROOT . 'upload/' . $image_id . '.jpg';
+    return file_put_contents($filepath, $image);
+  }
 }

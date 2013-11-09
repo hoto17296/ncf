@@ -22,7 +22,12 @@
 $(function(){
 	$('#paint').paint({
 		upload : function(image){
-			// アップロード処理
+      var requestUri =  '<?=$this->webroot?>images/upload.json';
+      var data = { image:image, fish_id:'<?=$fish['Fish']['id']?>' };
+      $.post(requestUri, { data:data, _method:'POST' }, function(res){
+				if(res.Status=='Error') console.log(res.Message);
+        else console.log('Upload Succeed!');
+			}, 'json');
 		},
 	});
 });
