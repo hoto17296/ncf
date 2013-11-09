@@ -8,7 +8,7 @@ class UsersController extends AppController {
   public function login() {
     $requestTokenUrl = 'https://api.twitter.com/oauth/request_token';
     $authorizeUrl = 'https://api.twitter.com/oauth/authorize';
-    $callbackUrl = 'http://' . $_SERVER['HTTP_HOST'] . '/ncf/users/callback/';
+    $callbackUrl = Router::url('/users/callback', true);
     $requestToken = $this->OAuthConsumer->getRequestToken('Twitter', $requestTokenUrl, $callbackUrl);
     
     if ($requestToken) {
