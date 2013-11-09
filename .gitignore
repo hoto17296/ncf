@@ -5,5 +5,5 @@ tmp/*
 [Cc]onfig/database.php
 [Ww]ebroot/index.php
 !empty
-webroot/upload/*
+webroot/img/upload/*
 deploy.sh
