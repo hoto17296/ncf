@@ -20,16 +20,19 @@
 
 <script type="text/javascript">
 $(function(){
-	$('#paint').paint({
-		upload : function(image){
+  $('#paint').paint({
+    upload : function(image){
       var requestUri =  '<?=$this->webroot?>images/upload.json';
       var data = { image:image, fish_id:'<?=$fish['Fish']['id']?>' };
       $.post(requestUri, { data:data, _method:'POST' }, function(res){
-				if(res.Status=='Error') console.log(res.Message);
-        else console.log('Upload Succeed!');
-			}, 'json');
-		},
-	});
+        if(res.Status=='Error'){
+          window.alert(res.Message);
+        } else {
+          location.href = "<?=$this->Html->url('/tanks/'.$fish['Tank']['id'])?>";
+        }
+      }, 'json');
+    },
+  });
 });
 </script>
 

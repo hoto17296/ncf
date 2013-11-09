@@ -21,8 +21,11 @@ class AppController extends Controller {
     return $this->set('title_for_layout', $title . ' | お絵かきアクアリウム');
   }
 
-  public function getUser() {
-    return $this->Session->read('user');
+  public function getUser($key=NULL) {
+    $user = $this->Session->read('user');
+    return (is_null($key) || !array_key_exists($key, $user))
+      ? $user
+      : $user[$key];
   }
 
   public function isLogin() {

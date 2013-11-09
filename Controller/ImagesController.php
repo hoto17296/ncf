@@ -7,6 +7,7 @@ class ImagesController extends AppController {
 
   public function paint($fish_id){
     $this->layout = false;
+    $this->checkLogin();
     $this->setTitle('お絵かきページ');
 
     if (!$this->Fish->exists($fish_id)) {
@@ -19,10 +20,11 @@ class ImagesController extends AppController {
 
   public function upload() {
     $this->autoRender = false;
+    $this->checkLogin();
 
     $data = array(
       'Image' => array(
-        'user_id' => $user['id'],
+        'user_id' => $this->getUser('id'),
         'fish_id' => $this->request->data['fish_id']
       )
     );
