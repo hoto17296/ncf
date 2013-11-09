@@ -21,6 +21,13 @@ class AppController extends Controller {
     return $this->set('title_for_layout', $title . ' | お絵かきアクアリウム');
   }
 
+  public function setFlash($message, $class='success'){
+    return $this->Session->setFlash($message, 'alert', array(
+      'plugin' => 'BoostCake',
+      'class' => 'alert-' . $class
+    ));
+  }
+
   public function getUser($key=NULL) {
     $user = $this->Session->read('user');
     return (is_null($key) || !array_key_exists($key, $user))
@@ -34,6 +41,7 @@ class AppController extends Controller {
 
   public function checkLogin() {
     if (!$this->isLogin()){
+      $this->Session->write('callback', $this->request->url);
       $this->redirect('/users/login');
     }
   }

@@ -37,11 +37,17 @@ class UsersController extends AppController {
       $this->User->save(array('User' => $user));
       $this->Session->write('user', $user);
     }
-    $this->redirect('/');
+    if ($callback = $this->Session->read('callback')){
+      $this->Session->delete('callback');
+      $this->redirect('/'.$callback);
+    } else {
+      $this->redirect('/');
+    }
   }
 
   public function logout() {
     $this->Session->delete('user');
+    $this->setFlash('ログアウトしました');
     $this->redirect('/');
   }
 

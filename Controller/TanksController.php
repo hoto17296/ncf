@@ -8,7 +8,8 @@ class TanksController extends AppController {
 	public function index() {
 	}
 
-	public function view($id = null) {
+  public function view($id = null) {
+
 		if (!$this->Tank->exists($id)) {
 			throw new NotFoundException(__('Invalid tank'));
 		}
