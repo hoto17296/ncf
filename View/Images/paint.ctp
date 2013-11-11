@@ -8,7 +8,7 @@
   echo $this->Html->css('jquery-ui.custom.min.css');
   echo $this->Html->css('jquery.colorpicker.css');
   echo $this->Html->css('jquery.paint.css');
-  echo $this->Html->script('jquery.min.js');
+  echo $this->Html->script('//code.jquery.com/jquery-2.0.3.min.js');
   echo $this->Html->script('jcanvas.min.js');
   echo $this->Html->script('jquery-ui.custom.min.js');
   echo $this->Html->script('jquery.ui.touch-punch.min.js');
