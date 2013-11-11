@@ -7,4 +7,4 @@ tmp/*
 [Ww]ebroot/index.php
 !empty
 webroot/img/upload/*
-deploy.sh
+deploy
