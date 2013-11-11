@@ -45,7 +45,7 @@
         dialog.html('<ul>' + colorList + '</ul>').css({
           position: 'absolute',
           left: elementPos.left,
-          top: elementPos.top + element.outerHeight()
+          top: elementPos.top + element.outerHeight(false)
         }).show(options.delay);
 
         // When you click on a color inside the dialog

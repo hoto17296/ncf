@@ -2,7 +2,8 @@
 <html>
 <head>
 	<?= $this->Html->charset() ?>
-	<title><?= $title_for_layout ?></title>
+  <title><?= $title_for_layout ?></title>
+  <meta name="viewport" content="width=device-width">
 	<?php
 		echo $this->Html->meta('icon');
     

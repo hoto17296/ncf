@@ -5,13 +5,15 @@
 	<title><?= $title_for_layout ?></title>
 <?php
   echo $this->Html->css('jquery-ui.custom/lightness.css');
+  echo $this->Html->css('jquery-ui.custom.min.css');
   echo $this->Html->css('jquery.colorpicker.css');
   echo $this->Html->css('jquery.paint.css');
   echo $this->Html->script('jquery.min.js');
   echo $this->Html->script('jcanvas.min.js');
   echo $this->Html->script('jquery-ui.custom.min.js');
+  echo $this->Html->script('jquery.ui.touch-punch.min.js');
   echo $this->Html->script('jquery.colorpicker.js');
-  echo $this->Html->script('jquery.paint.js');
+  echo $this->Html->script('jquery.paint.min.js');
 ?>
 </head>
 <body>
