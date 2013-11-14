@@ -3,7 +3,7 @@
 <head>
 	<?= $this->Html->charset() ?>
   <title><?= $title_for_layout ?></title>
-  <meta name="viewport" content="width=600px">
+  <meta name="viewport" content="width=600px,user-scalable=no">
 	<?php
 		echo $this->Html->meta('icon');
     

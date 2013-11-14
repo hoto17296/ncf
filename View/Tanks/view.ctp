@@ -1,4 +1,5 @@
 <? $this->Html->css('tank', null, array('inline' => false)) ?>
+<?=$this->element('header')?>
 
 <h2><?= $tank['Tank']['name'] ?></h2>
 
@@ -8,7 +9,7 @@
 <?php
 $style = array(
   'div' => array(
-    'top' => mt_rand(0,360)."px",
+    'top' => mt_rand(-20,80)."px",
     'animation-delay' => mt_rand(0,2000)."ms",
     '-webkit-animation-delay' => mt_rand(0,2000)."ms",
     'animation-duration' => mt_rand(8000,12000)."ms",
@@ -28,8 +29,25 @@ $style['img'] = css_comp($style['img']);
 <? endforeach ?>
 </div>
 
-<ul>
-<? foreach($tank['Fish'] as $fish): ?>
-  <li><?= $this->Html->link($fish['name'].'の絵を描く', '/images/paint/'.$fish['id']) ?></li>
-<? endforeach ?>
-</ul>
+<?= $this->Form->create('Image', array(
+	'inputDefaults' => array(
+		'label' => false,
+		'wrapInput' => false,
+		'class' => 'form-control'
+	),
+  'class' => 'form-inline',
+  'action' => 'paint'
+)) ?>
+この水槽の
+<?= $this->Form->select('fish_id', $fishes, array('empty'=>false)) ?>
+の絵を
+<?= $this->Form->submit('描く！', array('div' => false, 'class' => 'btn btn-success btn-lg')) ?>
+<?= $this->Form->end() ?>
+<script>
+$(function(){
+  $('#ImagePaintForm').submit(function(e){
+    e.preventDefault();
+    location.href = "<?= $this->Html->url('/images/paint/') ?>" + $("#ImageFishId").val();
+  });
+})
+</script>

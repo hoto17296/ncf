@@ -1,4 +1,6 @@
-<h2>南館のページ</h2>
+<?=$this->element('header')?>
+
+<h2>南館</h2>
 
 <ul>
 <? foreach($tanks as $tank): ?>

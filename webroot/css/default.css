@@ -1,4 +1,6 @@
 body {
+  color: #def;
+  background-color: #05b;
   background: #05b linear-gradient(to bottom, #7df, #05b 300px) no-repeat;
   background: -webkit-gradient(linear, top center, bottom center, from(#7df), color-stop(0.3,#05b), to(#05b));
   min-height: 300px;
@@ -18,4 +20,18 @@ body {
 
 #logo_top span {
   display: none;
+}
+
+#header a {
+  display: block;
+  height: 100px;
+  background-image: url(../img/logo_small.png);
+}
+
+#header span {
+  display: none;
+}
+
+h2 {
+  font-size: 56px;
 }

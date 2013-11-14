@@ -1,6 +1,6 @@
 .tank {
   width: 920px;
-  height: 600px;
+  height: 400px;
   background-color: #eff;
   margin-left: -320px;
   position: relative;
@@ -49,4 +49,13 @@
 @-webkit-keyframes swim {
 	from { left: 0%; }
 	to   { left: 100%; }
+}
+
+#ImagePaintForm {
+  margin: 2em 0;
+  font-size: large;
+}
+
+#ImagePaintForm select {
+  padding: .5em;
 }
