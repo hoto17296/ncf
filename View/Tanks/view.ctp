@@ -36,18 +36,11 @@ $style['img'] = css_comp($style['img']);
 		'class' => 'form-control'
 	),
   'class' => 'form-inline',
-  'action' => 'paint'
+  'action' => 'paint',
+  'onSubmit' => "location.href='{$this->Html->url('/images/paint/')}'+this.fish_id.value;return false"
 )) ?>
 この水槽の
-<?= $this->Form->select('fish_id', $fishes, array('empty'=>false)) ?>
+<?= $this->Form->select('fish_id', $fishes, array('name'=>'fish_id', 'empty'=>false)) ?>
 の絵を
 <?= $this->Form->submit('描く！', array('div' => false, 'class' => 'btn btn-success btn-lg')) ?>
 <?= $this->Form->end() ?>
-<script>
-$(function(){
-  $('#ImagePaintForm').submit(function(e){
-    e.preventDefault();
-    location.href = "<?= $this->Html->url('/images/paint/') ?>" + $("#ImageFishId").val();
-  });
-})
-</script>
