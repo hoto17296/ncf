@@ -1,0 +1,53 @@
+.tank {
+  width: 100%;
+  height: 600px;
+  background-color: #eff;
+  position: relative;
+  overflow: hidden;
+}
+
+.tank .fish {
+  position: absolute;
+}
+
+.tank img {
+  position: relative;
+  width: 320px;
+}
+
+.tank .updown {
+	animation-name: updown;
+	animation-duration: 2s;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: both;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+	/* animation: animation01 3s ease-in 1s both; （まとめて指定する場合）*/
+}
+
+.tank .swim {
+	animation-name: swim;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: both;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+	/* animation: animation01 3s ease-in 1s both; （まとめて指定する場合）*/
+}
+
+@keyframes updown {
+	from {
+		top: 0;
+	}
+	to {
+		top: 100px;
+	}
+}
+
+@keyframes swim {
+	from {
+		left: -320px;
+	}
+	to {
+		left: 100%;
+	}
+}
