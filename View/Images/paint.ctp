@@ -23,6 +23,7 @@
 <script type="text/javascript">
 $(function(){
   $('#paint').paint({
+    format : 'png',
     upload : function(image){
       var requestUri =  '<?=$this->webroot?>images/upload.json';
       var data = { image:image, fish_id:'<?=$fish['Fish']['id']?>' };

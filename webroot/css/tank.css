@@ -1,7 +1,8 @@
 .tank {
-  width: 100%;
+  width: 920px;
   height: 600px;
   background-color: #eff;
+  margin-left: -320px;
   position: relative;
   overflow: hidden;
 }
@@ -13,41 +14,39 @@
 .tank img {
   position: relative;
   width: 320px;
+  transition: transform 300ms linear;
+  -webkit-transition: -webkit-transform 300ms linear;
+}
+
+.tank img:hover {
+  transform: scale(1.2,1.2);
+  -webkit-transform: scale(1.2,1.2);
 }
 
 .tank .updown {
-	animation-name: updown;
-	animation-duration: 2s;
-	animation-timing-function: ease-in-out;
-	animation-fill-mode: both;
-  animation-direction: alternate;
-  animation-iteration-count: infinite;
-	/* animation: animation01 3s ease-in 1s both; （まとめて指定する場合）*/
+  animation: updown ease-in-out alternate infinite both;
+  -webkit-animation: updown ease-in-out alternate infinite both;
 }
 
 .tank .swim {
-	animation-name: swim;
-	animation-timing-function: ease-in-out;
-	animation-fill-mode: both;
-  animation-direction: alternate;
-  animation-iteration-count: infinite;
-	/* animation: animation01 3s ease-in 1s both; （まとめて指定する場合）*/
+	animation: swim ease-in-out alternate infinite both;
+	-webkit-animation: swim ease-in-out alternate infinite both;
 }
 
 @keyframes updown {
-	from {
-		top: 0;
-	}
-	to {
-		top: 100px;
-	}
+	from { top: 0; }
+	to   { top: 100px; }
+}
+@-webkit-keyframes updown {
+	from { top: 0; }
+	to   { top: 100px; }
 }
 
 @keyframes swim {
-	from {
-		left: -320px;
-	}
-	to {
-		left: 100%;
-	}
+	from { left: 0%; }
+	to   { left: 100%; }
+}
+@-webkit-keyframes swim {
+	from { left: 0%; }
+	to   { left: 100%; }
 }
