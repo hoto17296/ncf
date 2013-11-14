@@ -1,6 +1,6 @@
 body {
   background: #05b linear-gradient(to bottom, #7df, #05b 300px) no-repeat;
-  background: #05b -webkit-gradient(linear, top center, bottom center, from(#7df), color-stop(300px,#05b), to(#05b)) no-repeat;
+  background: -webkit-gradient(linear, top center, bottom center, from(#7df), color-stop(0.3,#05b), to(#05b));
   min-height: 300px;
 }
 
