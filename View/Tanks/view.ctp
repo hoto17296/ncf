@@ -8,24 +8,33 @@
 <? foreach($images as $image): ?>
 <?php
 $style = array(
-  'div' => array(
+  'fish' => array(
     'top' => mt_rand(-20,80)."px",
     'animation-delay' => mt_rand(0,2000)."ms",
     '-webkit-animation-delay' => mt_rand(0,2000)."ms",
     'animation-duration' => mt_rand(8000,12000)."ms",
     '-webkit-animation-duration' => mt_rand(8000,12000)."ms"
   ),
-  'img' => array(
+  'updown' => array(
     'animation-delay' => mt_rand(0,2000).'ms',
     '-webkit-animation-delay' => mt_rand(0,2000).'ms',
     'animation-duration' => mt_rand(2000,3000).'ms',
     '-webkit-animation-duration' => mt_rand(2000,3000).'ms'
   )
 );
-$style['div'] = css_comp($style['div']);
-$style['img'] = css_comp($style['img']);
+$style['fish'] = css_comp($style['fish']);
+$style['updown'] = css_comp($style['updown']);
 ?>
-  <div class="fish swim" style="<?=$style['div']?>"><?=$this->Html->image('upload/'.$image['Image']['id'].'.png', array('class'=>'updown', 'style'=>$style['img']))?></div>
+  <div class="fish" style="<?=$style['fish']?>">
+    <div class="updown" style="<?=$style['updown']?>">
+      <?=$this->Html->image('upload/'.$image['Image']['id'].'.png')?>
+
+      <div class="fukidashi">
+        <p class="fishname"><?=$image['Fish']['name']?></p>
+        <p class="artist">by <?=$image['User']['name']?></p>
+      </div>
+    </div>
+  </div>
 <? endforeach ?>
 </div>
 

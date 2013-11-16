@@ -9,28 +9,25 @@
 
 .tank .fish {
   position: absolute;
+  animation: swim ease-in-out alternate infinite both;
+	-webkit-animation: swim ease-in-out alternate infinite both;
 }
 
-.tank img {
-  position: relative;
+.tank .fish img {
   width: 320px;
   transition: transform 300ms linear;
   -webkit-transition: -webkit-transform 300ms linear;
 }
 
-.tank img:hover {
+.tank .fish img:hover {
   transform: scale(1.2,1.2);
   -webkit-transform: scale(1.2,1.2);
 }
 
 .tank .updown {
+  position: relative;
   animation: updown ease-in-out alternate infinite both;
   -webkit-animation: updown ease-in-out alternate infinite both;
-}
-
-.tank .swim {
-	animation: swim ease-in-out alternate infinite both;
-	-webkit-animation: swim ease-in-out alternate infinite both;
 }
 
 @keyframes updown {
@@ -49,6 +46,53 @@
 @-webkit-keyframes swim {
 	from { left: 0%; }
 	to   { left: 100%; }
+}
+
+.fish .fukidashi {
+  font-size: 18px;
+  color: #999;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: .5em 1em;
+  border: 1px solid #aaa;
+  border-radius: 12px;
+  position: absolute;
+  top: -50px;
+  left: 30%;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 300ms linear;
+  -webkit-transition: opacity 300ms linear;
+}
+.fish .fukidashi:before {
+  content: "";
+  border: 12px solid transparent;
+  border-top: 12px solid #fff;
+  position: absolute;
+  right: 50%;
+  bottom: -23px;
+  z-index: 2;
+}
+.fish .fukidashi:after {
+  content: "";
+  border: 12px solid transparent;
+  border-top: 12px solid #aaa;
+  position: absolute;
+  right: 50%;
+  bottom: -25px;
+  z-index: 1;
+}
+.fish:hover .fukidashi {
+  opacity: 1;
+}
+.fish .fukidashi p {
+  margin: 0;
+}
+.fish .fukidashi .fishname {
+  font-weight: bold;
+}
+.fish .fukidashi .artist {
+  text-align: right;
 }
 
 #ImagePaintForm {
