@@ -8,8 +8,8 @@ $style = array(
     'top' => mt_rand(-20,200)."px",
     'animation-delay' => mt_rand(0,2000)."ms",
     '-webkit-animation-delay' => mt_rand(0,2000)."ms",
-    'animation-duration' => mt_rand(5000,15000)."ms",
-    '-webkit-animation-duration' => mt_rand(5000,15000)."ms"
+    'animation-duration' => mt_rand(8000,15000)."ms",
+    '-webkit-animation-duration' => mt_rand(8000,15000)."ms"
   ),
   'updown' => array(
     'animation-delay' => mt_rand(0,2000).'ms',
