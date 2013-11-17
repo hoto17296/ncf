@@ -1,15 +1,8 @@
 <h1 id="logo_top"><span>みんなでつくる！ お絵かきアクアリウム</span></h1>
 
-<h2>水槽を観る</h2>
+<div id="buildings">
+<p>名古屋港水族館の水槽をのぞいてみよう！<br/>↓　↓　↓</p>
+<?=$this->Html->image('south.png', array('alt'=>'南館', 'url'=>'/south'))?>
+<?=$this->Html->image('north.png', array('alt'=>'北館', 'url'=>'/north'))?>
+</div>
 
-<p><?= $this->Html->link('北館', '/north') ?></p>
-<p><?= $this->Html->link('南館', '/south') ?></p>
-
-<?php
-if(!$is_login){
-  echo $this->Html->link('ログイン', '/users/login');
-}
-else{
-  pr($user);
-}
-?>
