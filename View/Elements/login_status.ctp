@@ -1,10 +1,10 @@
 <? if($is_login): ?>
-<? if($user['id']==1): ?>
 <p id="user_status">
   ログイン中： <?= $user['name'] ?><br/>
+<? if($user['id']==1): ?>
   <?= $this->Html->link('[ ログアウトする ]', '/logout') ?>
-</p>
 <? else: ?>
-<p id="user_status"><?= $this->Html->link("ログイン中： {$user['name']}", '/my') ?></p>
+  <?= $this->Html->link("[ マイページ ]", '/my') ?></p>
 <? endif ?>
+</p>
 <? endif ?>
