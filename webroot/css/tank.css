@@ -95,11 +95,4 @@
   text-align: right;
 }
 
-#ImagePaintForm {
-  margin: 2em 0;
-  font-size: large;
-}
 
-#ImagePaintForm select {
-  padding: .5em;
-}

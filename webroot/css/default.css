@@ -4,6 +4,10 @@ body {
   min-height: 300px;
 }
 
+a { color: #def; text-decoration: underline; }
+a:hover { color: #fff; }
+
+
 #container {
   width: 600px;
   margin: 0 auto;
@@ -14,10 +18,17 @@ body {
   background-image: url(../img/logo_top.png);
   height: 300px;
   width: 100%;
+  margin-bottom: 50px;
 }
 
 #logo_top span {
   display: none;
+}
+
+#user_status {
+  font-size:20px;
+  text-align: right;
+  margin: 1em 0;
 }
 
 #header a {
@@ -36,7 +47,7 @@ h2 {
 
 #buildings {
   background-color: #def;
-  margin-top: 100px;
+  margin-top: 50px;
   padding: .5em 0;
 }
 
@@ -58,12 +69,22 @@ h2 {
 }
 
 .tank_list li a {
+  color: #05b;
+  text-decoration: none;
   display: block;
   background-color: #def;
   padding: .5em 1em;
 }
 
 .tank_list li a:hover {
-  text-decoration: none;
   background-color: #fff;
+}
+
+#ImagePaintForm {
+  margin: 2em 0;
+  font-size: large;
+}
+
+#ImagePaintForm select {
+  padding: .5em;
 }

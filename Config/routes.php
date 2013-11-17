@@ -21,6 +21,10 @@
 	Router::connect('/', array('controller' => 'tanks', 'action' => 'index'));
 	Router::connect('/north', array('controller' => 'tanks', 'action' => 'north'));
 	Router::connect('/south', array('controller' => 'tanks', 'action' => 'south'));
+	Router::connect('/paint', array('controller' => 'images', 'action' => 'paint'));
+	Router::connect('/my', array('controller' => 'tanks', 'action' => 'my'));
+	Router::connect('/login', array('controller' => 'users', 'action' => 'login'));
+	Router::connect('/logout', array('controller' => 'users', 'action' => 'logout'));
 /**
  * ...and connect the rest of 'Pages' controller's URLs.
  */

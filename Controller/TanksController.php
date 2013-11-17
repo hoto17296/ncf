@@ -7,7 +7,14 @@ class TanksController extends AppController {
 
 	public function index() {
     $this->set('title_for_layout', 'お絵かきアクアリウム');
-	}
+  }
+
+  public function my() {
+    if (!$this->isLogin()){
+      $this->redirect('/');
+    }
+    $this->set('images', $this->Image->find('all', array('conditions'=>array('user_id'=>$this->getUser('id')))));
+  }
 
   public function view($id = null) {
 
