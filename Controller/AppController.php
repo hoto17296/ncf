@@ -11,10 +11,7 @@ class AppController extends Controller {
   );
 
   public function beforeFilter(){
-    $this->set('is_login', $this->isLogin());
-    if ($this->isLogin()){
-      $this->set('user', $this->getUser());
-    }
+    $this->setUserInfo();
   }
 
   public function setTitle($title) {
@@ -42,14 +39,14 @@ class AppController extends Controller {
   public function checkLogin() {
     if (!$this->isLogin()){
       $this->Session->write('callback', $this->request->url);
-      $this->redirect('/users/login');
+      $this->redirect('/login');
     }
   }
 
   public function setUserInfo() {
     $this->set('is_login', $this->isLogin());
     if ($this->isLogin()) {
-      $this->set('user_info', $this->getUser());
+      $this->set('user', $this->getUser());
     }
   }
 }

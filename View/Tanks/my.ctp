@@ -4,4 +4,4 @@
 
 <?= $this->element('tank', array('fishes'=>$images)) ?>
 
-<p class="pull-right"><?= $this->Html->link('ログアウトする', '/users/logout') ?></p>
+<p class="pull-right"><?= $this->Html->link('ログアウトする', '/logout') ?></p>

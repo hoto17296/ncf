@@ -21,7 +21,8 @@
 	Router::connect('/', array('controller' => 'tanks', 'action' => 'index'));
 	Router::connect('/north', array('controller' => 'tanks', 'action' => 'north'));
 	Router::connect('/south', array('controller' => 'tanks', 'action' => 'south'));
-	Router::connect('/paint', array('controller' => 'images', 'action' => 'paint'));
+	Router::connect('/tank/:id', array('controller' => 'tanks', 'action' => 'view'), array('pass'=>array('id'), 'id'=>'[0-9]+'));
+	Router::connect('/paint/:id', array('controller' => 'images', 'action' => 'paint'), array('pass'=>array('id'), 'id'=>'[0-9]+'));
 	Router::connect('/my', array('controller' => 'tanks', 'action' => 'my'));
 	Router::connect('/login', array('controller' => 'users', 'action' => 'login'));
 	Router::connect('/logout', array('controller' => 'users', 'action' => 'logout'));
@@ -30,8 +31,8 @@
  */
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
   
-  Router::mapResources('tanks');
-  Router::parseExtensions();
+  //Router::mapResources('tanks');
+  //Router::parseExtensions();
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on

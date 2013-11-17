@@ -31,7 +31,7 @@ $(function(){
         if(res.Status=='Error'){
           window.alert(res.Message);
         } else {
-          location.href = "<?=$this->Html->url('/tanks/'.$fish['Tank']['id'])?>";
+          location.href = "<?=$this->Html->url('/tank/'.$fish['Tank']['id'])?>";
         }
       }, 'json');
     },

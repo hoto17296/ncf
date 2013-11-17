@@ -1,6 +1,6 @@
 <? if ($is_login): ?>
 ログインしてる
-<? pr($user_info) ?>
+<? pr($user) ?>
 <? else: ?>
 ログインしてない
 <? endif ?>

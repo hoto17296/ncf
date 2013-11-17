@@ -12,7 +12,7 @@
 	),
   'class' => 'form-inline',
   'action' => 'paint',
-  'onSubmit' => "location.href='{$this->Html->url('/images/paint/')}'+this.fish_id.value;return false"
+  'onSubmit' => "location.href='{$this->Html->url('/paint/')}'+this.fish_id.value;return false"
 )) ?>
 この水槽の
 <?= $this->Form->select('fish_id', $fishes, array('name'=>'fish_id', 'empty'=>false)) ?>

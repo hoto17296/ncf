@@ -14,7 +14,6 @@ class ImagesController extends AppController {
       throw new NotFoundException(__('Invalid fish'));
     }
 
-    $this->set('user', $this->getUser());
     $this->set('fish', $this->Fish->findById($fish_id));
   }
 
