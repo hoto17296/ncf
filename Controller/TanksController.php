@@ -31,11 +31,11 @@ class TanksController extends AppController {
 
   public function north(){
     $this->setTitle('北館');
-		$this->set('tanks', $this->Tank->find('all'));
+		$this->set('tanks', $this->Tank->find('all', array('conditions'=>array('building'=>'north'))));
   }
   public function south(){
     $this->setTitle('南館');
-		$this->set('tanks', $this->Tank->find('all'));
+		$this->set('tanks', $this->Tank->find('all', array('conditions'=>array('building'=>'south'))));
   }
 
 }

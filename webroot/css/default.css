@@ -35,3 +35,24 @@ body {
 h2 {
   font-size: 56px;
 }
+
+.tank_list {
+  font-size: 28px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.tank_list li {
+  margin: .7em 0;
+}
+
+.tank_list li a {
+  display: block;
+  background-color: #def;
+  padding: .5em 1em;
+}
+
+.tank_list li a:hover {
+  text-decoration: none;
+  background-color: #fff;
+}
