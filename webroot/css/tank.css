@@ -1,8 +1,8 @@
 .tank {
-  width: 920px;
+  width: 780px;
   height: 400px;
   background-color: #eff;
-  margin-left: -320px;
+  margin-left: -180px;
   position: relative;
   overflow: hidden;
 }
@@ -14,7 +14,7 @@
 }
 
 .tank .fish img {
-  width: 320px;
+  width: 180px;
   transition: transform 300ms linear;
   -webkit-transition: -webkit-transform 300ms linear;
 }
@@ -58,7 +58,7 @@
   border-radius: 12px;
   position: absolute;
   top: -50px;
-  left: 30%;
+  left: 0;
   z-index: 2;
   opacity: 0;
   transition: opacity 300ms linear;
