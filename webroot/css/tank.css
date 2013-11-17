@@ -7,6 +7,13 @@
   overflow: hidden;
 }
 
+.tank .empty {
+  line-height: 400px;
+  margin-left: 180px;
+  text-align: center;
+  color: #7df;
+}
+
 .tank .fish {
   position: absolute;
   animation: swim ease-in-out alternate infinite both;

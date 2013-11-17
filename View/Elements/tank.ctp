@@ -32,5 +32,8 @@ $style['updown'] = css_comp($style['updown']);
     </div>
   </div>
 <? endforeach ?>
+<? if(count($fishes)==0): ?>
+  <p class="empty">この水槽には魚はまだいません(´・ω・`)</p>
+<? endif ?>
 </div>
 
