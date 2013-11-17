@@ -2,6 +2,7 @@ body {
   color: #def;
   background: #005db9 url(../img/back.png) repeat-x;
   min-height: 300px;
+  font-size: 28px;
 }
 
 a { color: #def; text-decoration: underline; }
@@ -45,6 +46,27 @@ h2 {
   font-size: 56px;
 }
 
+.link_list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.link_list li {
+  margin: .7em 0;
+}
+
+.link_list li a {
+  color: #05b;
+  text-decoration: none;
+  display: block;
+  background-color: #def;
+  padding: .5em 1em;
+}
+
+.link_list li a:hover {
+  background-color: #fff;
+}
+
 #buildings {
   background-color: #def;
   margin-top: 50px;
@@ -53,36 +75,13 @@ h2 {
 
 #buildings p {
   margin: .5em;
-  font-size: 28px;
   color: #05b;
   text-align: center;
 }
 
-.tank_list {
-  font-size: 28px;
-  list-style-type: none;
-  padding: 0;
-}
-
-.tank_list li {
-  margin: .7em 0;
-}
-
-.tank_list li a {
-  color: #05b;
-  text-decoration: none;
-  display: block;
-  background-color: #def;
-  padding: .5em 1em;
-}
-
-.tank_list li a:hover {
-  background-color: #fff;
-}
-
 #ImagePaintForm {
   margin: 2em 0;
-  font-size: large;
+  font-size: 20px;
 }
 
 #ImagePaintForm select {

@@ -44,7 +44,8 @@ class ImagesController extends AppController {
     echo json_encode($res);
   }
 
-	public function delete($id = null) {
+  /*
+ 	public function delete($id = null) {
 		$this->Image->id = $id;
 		if (!$this->Image->exists()) {
 			throw new NotFoundException(__('Invalid image'));
@@ -57,4 +58,5 @@ class ImagesController extends AppController {
 		}
 		return $this->redirect(array('action' => 'index'));
   }
+  */
 }

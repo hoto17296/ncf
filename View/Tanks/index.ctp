@@ -2,7 +2,7 @@
 
 <?=$this->element('login_status')?>
 
-<div id="buildings">
+<div id="buildings" class="box">
 <p>名古屋港水族館の水槽をのぞいてみよう！<br/>↓　↓　↓</p>
 <?=$this->Html->image('south.png', array('alt'=>'南館', 'url'=>'/south'))?>
 <?=$this->Html->image('north.png', array('alt'=>'北館', 'url'=>'/north'))?>

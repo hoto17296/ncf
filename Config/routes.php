@@ -26,6 +26,8 @@
 	Router::connect('/my', array('controller' => 'tanks', 'action' => 'my'));
 	Router::connect('/login', array('controller' => 'users', 'action' => 'login'));
 	Router::connect('/logout', array('controller' => 'users', 'action' => 'logout'));
+	Router::connect('/twitter', array('controller' => 'users', 'action' => 'twitter'));
+	Router::connect('/anonymous', array('controller' => 'users', 'action' => 'anonymous'));
 /**
  * ...and connect the rest of 'Pages' controller's URLs.
  */

@@ -5,7 +5,7 @@ class UsersController extends AppController {
 
   public $components = array('OAuthConsumer');
 
-  public function login() {
+  public function twitter() {
     $requestTokenUrl = 'https://api.twitter.com/oauth/request_token';
     $authorizeUrl = 'https://api.twitter.com/oauth/authorize';
     $callbackUrl = Router::url('/users/callback', true);
@@ -45,13 +45,25 @@ class UsersController extends AppController {
     }
   }
 
+  public function login() {
+    $this->setTitle('ログイン');
+  }
+
   public function logout() {
     $this->Session->delete('user');
-    $this->setFlash('ログアウトしました');
     $this->redirect('/');
   }
 
-  public function index() {
-    $this->setUserInfo();
+  public function anonymous(){
+    $anonymous = $this->User->findById(1);
+    $this->Session->write('user', $anonymous['User']);
+
+    if ($callback = $this->Session->read('callback')){
+      $this->Session->delete('callback');
+      $this->redirect('/'.$callback);
+    } else {
+      $this->redirect('/');
+    }
   }
+
 }
