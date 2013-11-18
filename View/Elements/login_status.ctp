@@ -4,7 +4,7 @@
 <? if($user['id']==1): ?>
   <?= $this->Html->link('[ ログアウトする ]', '/logout') ?>
 <? else: ?>
-  <?= $this->Html->link("[ マイページ ]", '/my') ?></p>
+  <?= $this->Html->link("[ マイページ ]", '/my') ?>
 <? endif ?>
 </p>
 <? endif ?>
