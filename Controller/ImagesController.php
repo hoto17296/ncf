@@ -5,6 +5,11 @@ class ImagesController extends AppController {
 
   public $uses = array('Image', 'Fish');
 
+  // 削除用画像一覧ページ
+  public function index(){
+    $this->set('images', $this->Image->find('all'));
+  }
+
   public function paint($fish_id){
     $this->layout = false;
     $this->checkLogin();
