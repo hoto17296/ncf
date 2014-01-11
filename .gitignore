@@ -8,3 +8,4 @@ tmp/*
 !empty
 webroot/img/upload/*
 deploy
+Controller/Component/OAuthConsumers/TwitterConsumer.php
